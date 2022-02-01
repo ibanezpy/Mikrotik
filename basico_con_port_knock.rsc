@@ -1,8 +1,3 @@
-# dec/16/2021 08:57:29 by RouterOS 6.49.2
-# software id = HMTW-9YDA
-#
-# model = 951Ui-2HnD
-# serial number = 81570789A645
 /interface bridge add name=bridge_lan
 /interface ethernet set [ find default-name=ether1 ] advertise=10M-half,10M-full,100M-half,100M-full,1000M-half,1000M-full
 /interface ethernet set [ find default-name=ether2 ] advertise=10M-half,10M-full,100M-half,100M-full,1000M-half,1000M-full
