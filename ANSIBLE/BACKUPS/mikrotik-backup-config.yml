@@ -1,0 +1,30 @@
+---
+- hosts: RouterDatapar
+  connection: network_cli
+  gather_facts: no 
+  
+  vars:
+    ftpserver_var: 172.27.1.2
+    ftpuser_var: jorge.ibanez@datapar.com
+    ftppass_var: Tu-password
+  
+  tasks:
+  # - name: Cambiando password
+  #   routeros_command:
+  #     commands: /user set datapar password=e4fdMrh4Vw
+
+  - name: Realizando Backup
+    routeros_command:
+      commands: /system backup save name {{inventory_hostname}}
+
+  - name: Exportando Backup
+    routeros_command:
+      commands: /export file={{inventory_hostname}}
+  
+  - name: FTP backup file
+    routeros_command:
+      commands: /tool fetch address={{ftpserver_var}} src-path={{inventory_hostname}}.backup user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/BK_Datos/Routers/{{inventory_hostname}}.backup upload=yes
+
+  - name: FTP export config
+    routeros_command:
+      commands: /tool fetch address={{ftpserver_var}} src-path={{inventory_hostname}}.rsc user={{ftpuser_var}} password={{ftppass_var}} mode=ftp dst-path=/BK_Datos/Routers/{{inventory_hostname}}.rsc upload=yes
