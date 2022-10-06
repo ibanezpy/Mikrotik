@@ -1,9 +1,9 @@
-[RouterDatapar]
-170.238.19.33   ansible_user=datapar ansible_password=<tu-password> ansible_network_os=routeros
-172.27.0.1      ansible_user=datapar ansible_password=<tu-password> ansible_network_os=routeros
-172.27.0.2      ansible_user=datapar ansible_password=<tu-password> ansible_network_os=routeros
-172.27.0.10     ansible_user=datapar ansible_password=<tu-password> ansible_network_os=routeros
-172.27.0.11     ansible_user=datapar ansible_password=<tu-password> ansible_network_os=routeros
-172.27.0.13     ansible_user=datapar ansible_password=<tu-password> ansible_network_os=routeros
-172.27.0.14     ansible_user=datapar ansible_password=<tu-password> ansible_network_os=routeros
-172.27.0.26     ansible_user=datapar ansible_password=<tu-password> ansible_network_os=routeros
+[RouterIbanez]
+170.238.19.33   ansible_user=Ibanez ansible_password=<tu-password> ansible_network_os=routeros
+172.27.0.1      ansible_user=Ibanez ansible_password=<tu-password> ansible_network_os=routeros
+172.27.0.2      ansible_user=Ibanez ansible_password=<tu-password> ansible_network_os=routeros
+172.27.0.10     ansible_user=Ibanez ansible_password=<tu-password> ansible_network_os=routeros
+172.27.0.11     ansible_user=Ibanez ansible_password=<tu-password> ansible_network_os=routeros
+172.27.0.13     ansible_user=Ibanez ansible_password=<tu-password> ansible_network_os=routeros
+172.27.0.14     ansible_user=Ibanez ansible_password=<tu-password> ansible_network_os=routeros
+172.27.0.26     ansible_user=Ibanez ansible_password=<tu-password> ansible_network_os=routeros

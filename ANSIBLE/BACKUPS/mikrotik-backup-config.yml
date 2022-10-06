@@ -1,17 +1,17 @@
 ---
-- hosts: RouterDatapar
+- hosts: RouterIbanez
   connection: network_cli
   gather_facts: no 
   
   vars:
     ftpserver_var: 172.27.1.2
-    ftpuser_var: jorge.ibanez@datapar.com
+    ftpuser_var: jorge.ibanez@Ibanez.com
     ftppass_var: Tu-password
   
   tasks:
   # - name: Cambiando password
   #   routeros_command:
-  #     commands: /user set datapar password=e4fdMrh4Vw
+  #     commands: /user set Ibanez password=xxxxxxxxxx
 
   - name: Realizando Backup
     routeros_command:
