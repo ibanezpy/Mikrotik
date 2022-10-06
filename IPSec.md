@@ -2,11 +2,11 @@
 
 Para este laboratorio utilizamos dos MIKROTIKS. 
 
-IBANEZ_DATAPAR_R1
+IBANEZ_R1
 * WAN = 172.27.15.150/20
 * LAN = 192.168.100.1/24
 
-IBANEZ_DATAPAR_R2
+IBANEZ_R2
 * WAN = 172.27.15.100/20
 * LAN = 192.168.50.1/24
 
@@ -49,11 +49,11 @@ Esta configuracion es en capa 3 (en el router), abajo se puede observar el codig
 /ip dns set allow-remote-requests=yes servers=8.8.8.8
 /ip firewall nat add action=accept chain=srcnat dst-address=192.168.50.0/24 src-address=192.168.100.0/24
 /ip firewall nat add action=masquerade chain=srcnat out-interface=ether1
-/ip ipsec identity add peer=A_R2 secret=Ibanez_Datapar_2019
+/ip ipsec identity add peer=A_R2 secret=Ibanez_2019
 /ip ipsec policy add dst-address=192.168.50.0/24 peer=A_R2 sa-dst-address=172.27.15.100 sa-src-address=172.27.15.150 src-address=192.168.100.0/24 tunnel=yes
 /ip route add distance=1 gateway=172.27.0.1
 /system clock set time-zone-name=America/Asuncion
-/system identity set name=IBANEZ_DATAPAR_R1
+/system identity set name=IBANEZ_R1
 /system ntp client set enabled=yes
 
 #CONFIGURACION DEL ROUTER 2
@@ -68,12 +68,12 @@ Esta configuracion es en capa 3 (en el router), abajo se puede observar el codig
 /ip dns set allow-remote-requests=yes servers=8.8.8.8
 /ip firewall nat add action=accept chain=srcnat dst-address=192.168.100.0/24 src-address=192.168.50.0/24
 /ip firewall nat add action=masquerade chain=srcnat out-interface=ether1
-/ip ipsec identity add peer=A_R1 secret=Ibanez_Datapar_2019
+/ip ipsec identity add peer=A_R1 secret=Ibanez_2019
 /ip ipsec policy add dst-address=192.168.100.0/24 peer=A_R1 sa-dst-address=172.27.15.150 sa-src-address=172.27.15.100 src-address=192.168.50.0/24 tunnel=yes
 /ip ipsec policy set 1 disabled=yes
 /ip route add distance=1 gateway=172.27.0.1
 /system clock set time-zone-name=America/Asuncion
-/system identity set name=IBANEZ_DATAPAR_R2
+/system identity set name=IBANEZ_R2
 /system lcd set contrast=0 enabled=no port=parallel type=24x4
 /system lcd page set time disabled=yes display-time=5s
 /system lcd page set resources disabled=yes display-time=5s
