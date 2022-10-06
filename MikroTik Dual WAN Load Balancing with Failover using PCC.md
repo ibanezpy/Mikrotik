@@ -6,11 +6,11 @@ Configuración de dos ISP para realizar el balanceo de carga en la LAN, todos lo
 
 El esquema que se utilizo fue el siguiente.
 
-ISP1 = 172.27.15.100/20 (DATAPAR)  
+ISP1 = 172.27.15.100/20 (IBANEZ)  
 ISP2 = 192.168.60.1/30 (ROUTER EXTRA)  
 LAN = 10.10.70.1/24
 
-El INTERNET_2 era proveidor por mi MIKROTIK, se conecta a la red de DATAPAR y dicho router entrega el segmento de red 192.168.60.0/30 a traves de la LAN.
+El INTERNET_2 era proveidor por mi MIKROTIK, se conecta a la red de IBANEZ y dicho router entrega el segmento de red 192.168.60.0/30 a traves de la LAN.
 
 
 ```
