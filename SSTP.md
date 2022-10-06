@@ -1,13 +1,13 @@
 ## Configuración de SSTP
 ### Configuración de certificados MK
 ```
-/certificate add name=CA country="PY" state="ITAPUA" locality="ENCARNACION" organization="GARIBALDI" unit="TI" common-name="CA" key-size=2048 days-valid=365000 key-usage=crl-sign,key-cert-sign
+/certificate add name=CA country="PY" state="ITAPUA" locality="ENCARNACION" organization="IBANEZ" unit="TI" common-name="CA" key-size=2048 days-valid=365000 key-usage=crl-sign,key-cert-sign
 /certificate sign CA ca-crl-host=<IP PUBLICO> name="CA"
 
-/certificate add name=server country="PY" state="ITAPUA" locality="ENCARNACION" organization="GARIBALDI" unit="TI" common-name="server" key-size=2048 days-valid=365000 key-usage=digital-signature,key-encipherment,tls-server
+/certificate add name=server country="PY" state="ITAPUA" locality="ENCARNACION" organization="IBANEZ" unit="TI" common-name="server" key-size=2048 days-valid=365000 key-usage=digital-signature,key-encipherment,tls-server
 /certificate sign server ca="CA" name="server"
 
-/certificate add name=client country="PY" state="ITAPUA" locality="ENCARNACION" organization="GARIBALDI" unit="TI" common-name="client" key-size=2048 days-valid=365000 key-usage=tls-client
+/certificate add name=client country="PY" state="ITAPUA" locality="ENCARNACION" organization="IBANEZ" unit="TI" common-name="client" key-size=2048 days-valid=365000 key-usage=tls-client
 /certificate sign client ca="CA" name="client"
 ```
 
