@@ -3,11 +3,11 @@ Configuración de dos ISP para realizar el balanceo de carga en la LAN, todos lo
 
 El esquema que se utilizo fue el siguiente.
 
-INTERNET_1 = 172.27.15.100/20   (DATAPAR)  
+INTERNET_1 = 172.27.15.100/20   (IBANEZ)  
 INTERNET_2 = 192.168.222.10/24  (CELULAR)  
 LAN_IBANEZ = 192.168.200.1/24
 
-El INTERNET_2 era proveidor por mi MIKROTIK, esto lo realize para tener una conexión de internet distina a DATAPAR. En este ejemplos estabamos usando los IPS DATAPAR y CLARO.
+El INTERNET_2 era proveidor por mi MIKROTIK, esto lo realize para tener una conexión de internet distina a IBANEZ. En este ejemplos estabamos usando los IPS IBANEZ y CLARO.
 
 ```
 /interface ethernet set [ find default-name=ether1 ] name=INTERNET_1
@@ -40,7 +40,7 @@ El INTERNET_2 era proveidor por mi MIKROTIK, esto lo realize para tener una cone
 /ip route add check-gateway=ping distance=2 gateway=192.168.222.1
 /ip socks access add action=deny
 /system clock set time-zone-name=America/Asuncion
-/system identity set name=RO_IBANEZ_DATAPAR
+/system identity set name=RO_IBANEZ
 /system scheduler add disabled=yes interval=30s name=BAJAR_INTERNET_2 on-event=CHECK_INTERNET_2 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-time=startup
 /system script add dont-require-permissions=yes name=CHECK_INTERNET_2 owner=admin policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":if ([/interface get [/interface find name=\"INTERNET_2\"] running] = true) do={\r\
     \n\t/log info \"INTERNET_2 is running\"\r\
