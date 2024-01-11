@@ -3,13 +3,13 @@ En la linea de abajo creamos los certificados que van a ser utilizados para el s
 
 ### Generate and sign the certificates:
 ```
-/certificate add name=CA country="PY" state="ALTO PARANA" locality="CDE" organization="DATAPAR" unit="TI" common-name="CA" key-size=4096 days-valid=365000 key-usage=crl-sign,key-cert-sign
+/certificate add name=CA country="PY" state="ALTO PARANA" locality="CDE" organization="Ibanez_RO" unit="TI" common-name="CA" key-size=4096 days-valid=365000 key-usage=crl-sign,key-cert-sign
 /certificate sign CA name="CA"
 
-/certificate add name=SERVER country="PY" state="ALTO PARANA" locality="CDE" organization="DATPAR" unit="TI" common-name="SERVER" key-size=4096 days-valid=365000 key-usage=digital-signature,key-encipherment,tls-server
+/certificate add name=SERVER country="PY" state="ALTO PARANA" locality="CDE" organization="Ibanez_RO" unit="TI" common-name="SERVER" key-size=4096 days-valid=365000 key-usage=digital-signature,key-encipherment,tls-server
 sign SERVER ca="CA" name="SERVER"
 
-/certificate add name=CLIENT country="PY" state="ALTO PARANA" locality="CDE" organization="DATAPAR" unit="TI" common-name="CLIENT" key-size=4096 days-valid=365000 key-usage=tls-client
+/certificate add name=CLIENT country="PY" state="ALTO PARANA" locality="CDE" organization="Ibanez_RO" unit="TI" common-name="CLIENT" key-size=4096 days-valid=365000 key-usage=tls-client
 /certificate sign CLIENT ca="CA" name="CLIENT"
 ```
 
@@ -19,7 +19,7 @@ Exportamos las llaves que vamos a instalar luego en nuestro sistema operativo o 
 
 ```
 /certificate export-certificate CA export-passphrase=""
-/certificate export-certificate CLIENT export-passphrase=datapar-py
+/certificate export-certificate CLIENT export-passphrase=Ibanez_RO-py
 ```
 
 ### Set the OVPN server on the router:
@@ -80,7 +80,7 @@ redirect-gateway def1
 2. auth.cfg (debemos de colocar nuestro usuario y contraseña que fueron creados en el servidor OpenVPN
 ```
 ibanez
-datapar
+Ibanez_RO--pass
 ```
 
 Obs: Este paso no es necesario pero es importante saberlo.  
