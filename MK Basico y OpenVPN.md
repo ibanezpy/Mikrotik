@@ -86,7 +86,7 @@ Es muy importante realizar primero la configuración de arriba ya que ahora proc
 ```
 /certificate add name=CA country="PY" state="ALTO PARANA" locality="CDE" organization="Ibanez_RO" unit="TI" common-name="CA" key-size=1024 days-valid=365000 key-usage=crl-sign,key-cert-sign
 /certificate sign CA name="CA"
-/certificate add name=SERVER country="PY" state="ALTO PARANA" locality="CDE" organization="DATPAR" unit="TI" common-name="SERVER" key-size=1024 days-valid=365000 key-usage=digital-signature,key-encipherment,tls-server
+/certificate add name=SERVER country="PY" state="ALTO PARANA" locality="CDE" organization="Ibanez_RO" unit="TI" common-name="SERVER" key-size=1024 days-valid=365000 key-usage=digital-signature,key-encipherment,tls-server
 /certificate sign SERVER ca="CA" name="SERVER"
 /certificate add name=CLIENT country="PY" state="ALTO PARANA" locality="CDE" organization="Ibanez_RO" unit="TI" common-name="CLIENT" key-size=1024 days-valid=365000 key-usage=tls-client
 /certificate sign CLIENT ca="CA" name="CLIENT"
